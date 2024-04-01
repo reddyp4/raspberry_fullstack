@@ -34,8 +34,19 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
 
  #Steps
  1) Copy Raspbian onto SD Card
+   1_ Download version
+      Version: Raspberry Pi OS Lite
+      Release date: March 15th 2024
+      System: 64-bit
+      Kernel version: 6.6
+      Debian version: 12 (bookworm)
+      Size: 414MB
+   2_ Get etcher and flash the SD card from mac
  2) Copy ssh and wifi configuration to sd card
+   1_ Create a file "ssh" no extension on the SD card
+   2_ Create "wpa_supplicant.conf" with Wifi Credentials for Raspberry PI
  3) Boot Raspberry from the SD card
+   1_ Use spare USB for powering, ethernet for host
  4) InET finds raspberry connected to PC
  5) ssh pi$ip (182.168.x.x from iNet)
  6) Configure "sudo raspi-config"
