@@ -36,24 +36,22 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
  1) Copy Raspbian onto SD Card
    1_ Download version
       Version: Raspberry Pi OS Lite (Will be using headless version)
-      "2024-03-15-raspios-bookworm-arm64-lite.img"
       Release date: March 15th 2024
       System: 64-bit
       Kernel version: 6.6
       Debian version: 12 (bookworm)
       Size: 414MB
-   2_ Get etcher and flash the SD card from mac
- 2) Copy ssh and wifi configuration to sd card
-   1_ Create a file "ssh" no extension on the SD card
-   2_ Create "wpa_supplicant.conf" with Wifi Credentials for Raspberry PI
+   2_ Get Raspberry Imager and flash the SD card from mac
+   3_ Set ssh and wifi configuration to sd card
+   4_ Create a file "ssh" no extension on the SD card
+   5_ Create "wpa_supplicant.conf" with Wifi Credentials for Raspberry PI
  3) Boot Raspberry from the SD card
-   1_ Use spare USB for powering, ethernet for host
-   2_ Moved to USB-C + new power supply
- 4) InET finds raspberry connected to PC
+   1_ Moved to USB-C + new power supply
+ 4) InET finds raspberry connected to PC -> Can find on nmap or router page
    1_ iNet is not free
    2_ Linux nmap
    3_ Using nmap "nmap -F -n -Pn 10.0.0.1/24"
- 5) ssh pi$ip (182.168.x.x from iNet)
+ 5) ssh pi$ip (182.168.x.x from iNet) -> changed to username@raspberrypi.local
  6) Configure "sudo raspi-config"
     6.1) Passwd, network options, network names, wifi
     6.2) Rename raspberry Pi
@@ -73,6 +71,7 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
     8.1) Logon as a user
     8.2) reboot: sudo shutdown -h now (green LED off)
     8.3) Pop sd card, and connect to pc. 
+    8.4) Access: diskutil list
     8.4) Copy backup: sudo dd if=/dev/disk3 of=~/rpi_backup/RaspbianStretchLite_fresh_install_25Mar24.dmg 
     8.5) Can take time - may 30+minutes
  9) Restore a backup
