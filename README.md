@@ -41,17 +41,19 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
       Kernel version: 6.6
       Debian version: 12 (bookworm)
       Size: 414MB
-   2_ Get Raspberry Imager and flash the SD card from mac
-   3_ Set ssh and wifi configuration to sd card
-   4_ Create a file "ssh" no extension on the SD card
-   5_ Create "wpa_supplicant.conf" with Wifi Credentials for Raspberry PI
+      1_ Set ssh and wifi configuration to sd card
+      2_ Create a file "ssh" no extension on the SD card
+      3_ Create "wpa_supplicant.conf" with Wifi Credentials for Raspberry PI
+   2_ Get Raspberry Imager and flash the SD card from mac. Use ssh & network settings.
  3) Boot Raspberry from the SD card
    1_ Moved to USB-C + new power supply
  4) InET finds raspberry connected to PC -> Can find on nmap or router page
    1_ iNet is not free
-   2_ Linux nmap
-   3_ Using nmap "nmap -F -n -Pn 10.0.0.1/24"
+   2_ Option2: Linux nmap
+      1_ Using nmap "nmap -F -n -Pn 10.0.0.1/24"
+   3_ Use router
  5) ssh pi$ip (182.168.x.x from iNet) -> changed to username@raspberrypi.local
+   1_ When reconnecting, ssh-keygen -R {RPi-IP-Address}/{name}
  6) Configure "sudo raspi-config"
     6.1) Passwd, network options, network names, wifi
     6.2) Rename raspberry Pi
@@ -72,7 +74,8 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
     8.2) reboot: sudo shutdown -h now (green LED off)
     8.3) Pop sd card, and connect to pc. 
     8.4) Access: diskutil list
-    8.4) Copy backup: sudo dd if=/dev/disk3 of=~/rpi_backup/RaspbianStretchLite_fresh_install_25Mar24.dmg 
+    8.4) Copy backup: sudo dd if=/dev/disk3 of=~/rpi_backup/RaspbianStretchLite_fresh_install_25Mar24.dmg
+    Unable to restore from .img 
     8.5) Can take time - may 30+minutes
  9) Restore a backup
     9.1) Check location of sdcard (mac): diskutil list
@@ -92,6 +95,8 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
     10.7) Wire the circuit: LED, Switch to GPIOs
     10.8) Install pip: sudo apt-get install python3-pip
     10.9) Install rpi.gpio: pip3 install rpi_gpio
+      1) Error: externally managed package
+      2) use --break-system-packages to force
     10.11) Set GPIO
             import RPi.GPIO as GPIO
             pin = 7
