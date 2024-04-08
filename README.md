@@ -113,7 +113,9 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
       11.2) config: git config --global user.email reddyp4@gmail.com
       11.3) config: git config --global user.name reddyp4
       11.4) clone: ADAfruit_Python from adafruit
+         1) Package is deprecated, but we will still use it
       11.5) setup packages: sudo python3 setup.py install 
+         1) available for both pi/bbb - use --force-pi or --force-bbb
    12) Install DHT22 sensor
       12.1) Sensor: python3 AdafruitDHT.py 2303 17 -> #sensorDHT22-2302 gpio#15
       12.2) SEE: cat adafruit.py 
@@ -132,28 +134,33 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
             System python: modules/packages
             App1->mod/pkg1, app2->mod/pkg2
             Individual modules can have individual modules/packages
+            sudo apt-get update
+            sudo apt-get upgrade
       13.1) Essential packages: sudo apt-get install build-essential
-      13.2) sudo apt-get install libncurses5-dev libncursesw5-dev libreadline6-dev
-      13.3) sudo apt-get install libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libsqlite3-dev libgdbm-dev tk8.5-dev
-      13.4) if didnt get, sudo-apt-get update
-      13.5) python dev tools: sudo apt-get install python-dev 
-      13.6) pip for flask: sudo apt-get install libssl-dev openssl
-      13.7) download, compile: 
+      13.2) sudo apt-get install libncurses5-dev libncursesw5-dev libreadline6-dev libffi-dev 
+      13.3) sudo apt-get install libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libsqlite3-dev libgdbm-dev tk8.5-dev libssl-dev openssl
+      13.4) sudo apt-get install libboost-python-dev
+      13.5) sudo apt-get install libpulse-dev
+      13.6) python dev tools: 
+            sudo apt-get install python-dev-is-python3
+            sudo apt-get install vim
+      13.7) download, compile: python virtual environment
+         0_ cd ~
          1_ mkdir python-source
-         2_ in this folder-> wget https://... .tgz
+         2_ in this folder-> wget https://... .tgz -> get gzipped file
          3_ python3 --version -> update
          4_ tar zxvf Python***.tgz
          5_ cd Python***
-         6_ ./configure --prefix=/usr/local/opt/python-3.6.4
+         6_ ./configure --prefix=/usr/local/opt/python-3.11.9
          7_ make -> compilation
             Look for "Python build finished successfully"
          8_ Install new version: sudo make install 
          9_ check new version .../usr/local.opt/../python3.6 --version
-         10_ use full path
-         11_ Take a backup of setup
-   14) Setup Infra for Web Application 
+         10_ use full path 
+         11_ Take a backup of setup 
+   14) Setup Virtual Environment - Infra for Web Application 
       14.1) Python VM: sudo su
-      14.2) cd _var -> mkdir www (for web applications)
+      14.2) cd /var -> mkdir www (for web applications)
       14.3) inside www -> mkdir lab_app
       14.4) inside lap_app -> /usr/local/opt/python-3.6.4/bin/python3.6 -m venv .
             venv module -> virtual environment 
@@ -161,7 +168,7 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
    15) Install NGINX
       15.1) Go to lap_app -> .bin/activate
       15.2) apt-get install nginx -> may be apt-get update
-      15.3) Check -> https://192.168.111.36 -> Welcome to nginx
+      15.3) Check -> https://10.0.0.47 -> Welcome to nginx
    16) Install Flask ->
       16.1) pip install flask
       16.2) Create tiny appl using vim 
