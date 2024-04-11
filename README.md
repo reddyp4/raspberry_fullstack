@@ -130,35 +130,93 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
             web server: nginx 
             web browser: url
             order of installation doesnt matter
-      13.1) Python virtual environment needed for individual modules
-            System python: modules/packages
-            App1->mod/pkg1, app2->mod/pkg2
-            Individual modules can have individual modules/packages
-            sudo apt-get update
-            sudo apt-get upgrade
-      13.1) Essential packages: sudo apt-get install build-essential
-      13.2) sudo apt-get install libncurses5-dev libncursesw5-dev libreadline6-dev libffi-dev 
-      13.3) sudo apt-get install libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libsqlite3-dev libgdbm-dev tk8.5-dev libssl-dev openssl
-      13.4) sudo apt-get install libboost-python-dev
-      13.5) sudo apt-get install libpulse-dev
-      13.6) python dev tools: 
-            sudo apt-get install python-dev-is-python3
-            sudo apt-get install vim
-      13.7) download, compile: python virtual environment
-         0_ cd ~
-         1_ mkdir python-source
-         2_ in this folder-> wget https://... .tgz -> get gzipped file
-         3_ python3 --version -> update
-         4_ tar zxvf Python***.tgz
-         5_ cd Python***
-         6_ ./configure --prefix=/usr/local/opt/python-3.11.9
-         7_ make -> compilation
-            Look for "Python build finished successfully"
-         8_ Install new version: sudo make install 
-         9_ check new version .../usr/local.opt/../python3.6 --version
-         10_ use full path 
+
+Step 1
+------
+$ sudo apt-get update
+
+Step 2
+------
+$ sudo apt-get upgrade
+
+Step 3
+------
+$ sudo apt-get install build-essential
+
+Step 4
+------
+$ sudo apt-get install libncurses5-dev libncursesw5-dev libreadline6-dev libffi-dev
+
+Step 5
+------
+$ sudo apt-get install libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libsqlite3-dev libgdbm-dev tk8.5-dev libssl-dev openssl
+$ sudo apt-get install libboost-python-dev
+$ sudo apt-get install libpulse-dev
+
+Step 6
+------
+$ sudo apt-get install python-dev
+$ sudo apt-get install vim
+
+Step 7
+------
+$ cd ~
+$ mkdir python-source
+$ cd python-source/
+
+Step 8
+------
+$ wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgz
+
+Step 9
+------
+$ tar zxvf Python-3.8.1.tgz
+
+Step 10
+------
+$ cd Python-3.8.1/
+$ ./configure --prefix=/usr/local/opt/python-3.8.1
+
+Step 11
+-------
+$ make
+
+Step 12
+-------
+$ sudo make install
+
+Step 13
+-------
+$ /usr/local/opt/python-3.8.1/bin/python3.8 --version
+
          11_ Take a backup of setup 
+
    14) Setup Virtual Environment - Infra for Web Application 
+
+   Step 1
+------
+$ sudo su
+
+Step 2
+------
+$ mkdir /var/www
+$ mkdir /var/www/lab_app/
+$ cd /var/www/lab_app/
+
+Step 3
+------
+$ /usr/local/opt/python-3.8.1/bin/python3.8 -m venv .
+
+Step 4
+------
+$ . bin/activate
+
+(Notice that the beginning of the command line shows the name of the active virtual environment)
+
+Step 5
+------
+$ deactivate
+
       14.1) Python VM: sudo su
       14.2) cd /var -> mkdir www (for web applications)
       14.3) inside www -> mkdir lab_app
