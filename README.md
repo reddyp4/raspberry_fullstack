@@ -46,7 +46,8 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
       3_ Create "wpa_supplicant.conf" with Wifi Credentials for Raspberry PI
    2_ Get Raspberry Imager and flash the SD card from mac. Use ssh & network settings.
  3) Boot Raspberry from the SD card
-   1_ Moved to USB-C + new power supply
+   1_ Got IP Scanner for scanning ips on local LAN
+   2_ Moved to USB-C + new power supply
  4) InET finds raspberry connected to PC -> Can find on nmap or router page
    1_ iNet is not free
    2_ Option2: Linux nmap
