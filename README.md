@@ -27,7 +27,9 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
 Useful commands:
 1) Copy files from raspberry pi to mac
    scp user@raspberrypi.local:filename.xx .
-2) 
+2) Copy file from mac to raspberry
+   scp button.py user@raspberrypi.local:button.py
+3) 
 
 Bugs:
 1) Unable to ssh: 
