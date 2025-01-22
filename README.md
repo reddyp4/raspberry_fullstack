@@ -23,3 +23,11 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
  - bread-board
  - dht-22 sensor 
  - push-button, 10k pull-down, LED, current limiting resistor, jumpers etc. 
+
+Bugs:
+1) Unable to ssh: 
+   Why? New versions do not have ssh/default user/pwd
+  a) Remove known_hosts file 
+  b) Flash using Raspberry PI Imager, and custom settings for ssh, user, passwd
+  c) ssh using raspberyypi.local
+2) 
