@@ -24,6 +24,11 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
  - dht-22 sensor 
  - push-button, 10k pull-down, LED, current limiting resistor, jumpers etc. 
 
+Useful commands:
+1) Copy files from raspberry pi to mac
+   scp user@raspberrypi.local:filename.xx .
+2) 
+
 Bugs:
 1) Unable to ssh: 
    Why? New versions do not have ssh/default user/pwd
