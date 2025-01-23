@@ -25,9 +25,9 @@ Full stack embedded on Raspberry PI: Headless, Embedded Linux, Python, Web Devel
  - push-button, 10k pull-down, LED, current limiting resistor, jumpers etc. 
 
 Useful commands:
-1) Copy files from raspberry pi to mac
+1) Copy files from raspberry pi to mac (at mac)
    scp user@raspberrypi.local:filename.xx .
-2) Copy file from mac to raspberry
+2) Copy file from mac to raspberry (at mac)
    scp button.py user@raspberrypi.local:button.py
 3) 
 
