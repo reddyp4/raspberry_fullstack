@@ -38,3 +38,9 @@ Bugs:
   b) Flash using Raspberry PI Imager, and custom settings for ssh, user, passwd
   c) ssh using raspberyypi.local
 2) 
+
+Backups:
+How-to: Backup SD card 
+Commands: diskutil list; get the file
+sudo dd if=/dev/disk4 of=01_RaspberryPi_Webpage_automated_nextSQLite_2024_01_25.dmg
+01 - Working pages, systemd for automatic pages
