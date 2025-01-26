@@ -37,7 +37,9 @@ Bugs:
   a) Remove known_hosts file 
   b) Flash using Raspberry PI Imager, and custom settings for ssh, user, passwd
   c) ssh using raspberyypi.local
-2) 
+2) Updated the css page, but server doesnt load
+  a) 
+3) 
 
 Backups:
 How-to: Backup SD card 
